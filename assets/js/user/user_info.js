@@ -6,8 +6,8 @@ $(function () {
             }
         }
     })
-    getUser();
-    function getUser() {
+    getUserInfo();
+    function getUserInfo() {
         $.ajax({
             type: 'get',
             url: '/my/userinfo',
@@ -23,7 +23,7 @@ $(function () {
 
     $('#btnReset').on('click',function(e){
         e.preventDefault();
-        getUser();
+        getUserInfo();
     })
 
     $('.layui-form').on('submit',function(e){
@@ -37,7 +37,7 @@ $(function () {
                     return layui.layer.msg(res.message)
                 }
                 layui.layer.msg(res.message);
-                window.parent.getUserInfo();
+                window.parent.getUserInfo()
             }
         })
     })
